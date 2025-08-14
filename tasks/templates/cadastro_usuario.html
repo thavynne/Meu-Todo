@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}Cadastro{% endblock %}
+
+{% block content %}
+<div class="d-flex justify-content-center align-items-center" style="min-height: 70vh; background: #f0f4f8;">
+    <div class="card shadow-lg p-4" style="width: 100%; max-width: 450px; border-radius: 20px; background: linear-gradient(135deg, #a8edea, #fed6e3);">
+        <h2 class="card-title text-center mb-4" style="color: #333; font-weight: bold;">Crie sua conta</h2>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary w-100 mb-3" style="border-radius: 50px; background: linear-gradient(to right, #ff7e5f, #feb47b); border: none; font-weight: bold;">Cadastrar</button>
+        </form>
+        <p class="text-center mb-0" style="color: #333;">
+            Já tem uma conta? <a href="{% url 'tasks:login' %}" class="text-decoration-none" style="color: #ff7e5f; font-weight: bold;">Entre aqui</a>
+        </p>
+    </div>
+</div>
+{% endblock %}
